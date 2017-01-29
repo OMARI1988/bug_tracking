@@ -35,7 +35,7 @@ class App():
     def __init__(self, master):
         # variables
         self.directory = "C:\Users\Zak\Documents\Bug_Tracking\\"
-        # self.directory = '/home/omari/Python/bug_tracking/'
+        self.directory = '/home/omari/Python/bug_tracking/'
         self.master = master
         self.dir_opt = {}
         self._Track = {}
