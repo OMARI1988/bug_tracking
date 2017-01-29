@@ -7,3 +7,4 @@ This code performs 2D tracking of a flying bug, then reconstructs the 3D path of
 ![marker](https://raw.githubusercontent.com/OMARI1988/bug_tracking/master/images/bug_tracking.png)
 
 3D reconstruction
+![marker](https://raw.githubusercontent.com/OMARI1988/bug_tracking/master/images/3D_tracks.png)
