@@ -14,4 +14,4 @@ Requirements:
 ![marker](https://raw.githubusercontent.com/OMARI1988/bug_tracking/master/images/3d_tracks.png)
 
 video tutorial lf how to run the software:
-
+https://youtu.be/3sqgq-yPxto
