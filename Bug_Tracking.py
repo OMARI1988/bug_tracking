@@ -35,7 +35,7 @@ class App():
     def __init__(self, master):
         # variables
         self.directory = "C:\Users\Zak\Documents\Bug_Tracking\\"
-        self.directory = '/home/omari/Dropbox/Bug_Tracking/codes/'
+        # self.directory = '/home/omari/Python/bug_tracking/'
         self.master = master
         self.dir_opt = {}
         self._Track = {}
@@ -105,23 +105,19 @@ class App():
         # self.row+=1
 
         # video control
-        self.photo_init = ImageTk.PhotoImage(Image.open(self.directory+'init.png'))
-        # self.photo_init = PhotoImage(file = self.directory+'init.png')
+        self.photo_init = ImageTk.PhotoImage(Image.open(self.directory+'images/init.png'))
         self.frame_0 = Button(master, image=self.photo_init, command=self.first_frame_callback, height = 30)
         self.frame_0.grid(row=self.row, column=0, padx=2, pady=4, sticky=W+E)
 
-        self.photo_pause = ImageTk.PhotoImage(Image.open(self.directory+'pause.png'))
-        # self.photo_pause = PhotoImage(file = self.directory+'pause.png')
+        self.photo_pause = ImageTk.PhotoImage(Image.open(self.directory+'images/pause.png'))
         self.pause = Button(master, image=self.photo_pause, command=self.pause_callback, height = 30)
         self.pause.grid(row=self.row, column=1, padx=2, pady=4, sticky=W+E)
 
-        self.photo_play = ImageTk.PhotoImage(Image.open(self.directory+'play.png'))
-        # self.photo_play = PhotoImage(file = self.directory+'play.png')
+        self.photo_play = ImageTk.PhotoImage(Image.open(self.directory+'images/play.png'))
         self.play = Button(master, image=self.photo_play, command=self.play_callback, height = 30)
         self.play.grid(row=self.row, column=2, padx=2, pady=4, sticky=W+E)
 
-        self.photo_end = ImageTk.PhotoImage(Image.open(self.directory+'end.png'))
-        # self.photo_end = PhotoImage(file = self.directory+'end.png')
+        self.photo_end = ImageTk.PhotoImage(Image.open(self.directory+'images/end.png'))
         self.end = Button(master, image=self.photo_end, command=self.final_frame_callback, height = 30)
         self.end.grid(row=self.row, column=3, padx=2, pady=4, sticky=W+E)
         self.row+=1
@@ -511,11 +507,11 @@ class App():
     def update_image(self,val,val_str,other):
         img = []
         if other=='init':
-            img = cv2.imread(self.directory+'empty.jpg')
+            img = cv2.imread(self.directory+'images/empty.jpg')
         elif other=='wait':
-            img = cv2.imread(self.directory+'wait.jpg')
+            img = cv2.imread(self.directory+'images/wait.jpg')
         elif other=='model':
-            img = cv2.imread(self.directory+'camera_model.jpg')
+            img = cv2.imread(self.directory+'images/camera_model.jpg')
         else:
             if self._frames != []:
                 img = self._frames[int(val)-1]
