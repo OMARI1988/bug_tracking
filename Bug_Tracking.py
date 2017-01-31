@@ -14,6 +14,8 @@ from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 import functions_3d as func_3d
 import sys
+import imageio
+# from moviepy.editor import *
 
 """
 Latest-updates
@@ -34,8 +36,8 @@ class App():
     """docstring for App"""
     def __init__(self, master):
         # variables
-        self.directory = "C:\Users\Zak\Documents\Bug_Tracking\\"
-        # self.directory = '/home/omari/Python/bug_tracking/'
+        self.directory = os.path.dirname(os.path.realpath(__file__))+"\\"
+        # self.directory = '/home/omari/Dropbox/Bug_Tracking/codes/'
         self.master = master
         self.dir_opt = {}
         self._Track = {}
@@ -395,16 +397,20 @@ class App():
             print "please select a video"
             self.update_image(0,0,'init')
         else:
-            self._cap = cv2.VideoCapture(self.dir)
-            count = 1
-            while(1):
-                ret, frame = self._cap.read()
-                if ret:
-                    self._frames.append(frame)
-                    self.fixed[count] = []
-                    count += 1
-                else:
-                    break
+            self._vid = imageio.get_reader(self.dir)
+            for i, im in enumerate(self._vid):
+                self._frames.append(im)
+                self.fixed[i+1] = []
+            # self._cap = cv2.VideoCapture(self.dir)
+            # count = 1
+            # while(1):
+            #     ret, frame = self._cap.read()
+            #     if ret:
+                    # self._frames.append(frame)
+                    # self.fixed[count] = []
+                    # count += 1
+            #     else:
+            #         break
             self.video_len = len(self._frames)
             self.scale_l = Scale(self.master, from_=1, to=self.video_len, orient=HORIZONTAL, command=self.scale_callback)
             # print 'this happened'
