@@ -204,7 +204,7 @@ class compute_3d():
             elif i == len(frames)-1:
                 x = X3d[i]+((2/5.0)*d3[i])-((1/7.0)*d4[i])
             else:
-                x = X3d[i]-((3/35.0)*d3[i+2])
+                x = X3d[i]-((3/35.0)*d4[i+2])
             X_smooth.append(x)
 
         # for i,y in zip(X3d,X_smooth):
